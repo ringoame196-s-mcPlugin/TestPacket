@@ -30,6 +30,17 @@
         protocolLibraryManager.sendServerPacket(player, packet)
 ```
 </details>
+
+<details>
+    <summary>PacketType.Play.Server.PLAYER_INFO</summary>
+
+```kotlin
+    if (packet.playerInfoDataLists.size() < 1) return
+    val playerInfoData = packet.playerInfoDataLists.read(1).toList()[0]
+    val gameMode = playerInfoData.gameMode // ゲームモード
+    val targetUUID = playerInfoData.profile.id
+```
+</details>
  
 ## 開発環境
 - Minecraft Version : 1.20.1
